@@ -1,0 +1,71 @@
+name: violencias
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  url_launcher: ^6.0.20
+  permission_handler: ^10.2.0 
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.1
+
+flutter:
+  assets:
+    - assets/icons/whatsaap.png
+    - assets/icons/LogoPoliBlanco.png
+    - assets/icons/Recurso 2.png
+    - assets/icons/Recurso 3.png
+    - assets/icons/Recurso 4.png
+    - assets/icons/Recurso 5.png
+    - assets/icons/Recurso 6.png
+    - assets/icons/Recurso 10.png
+    - assets/icons/Recurso 7.png
+    - assets/icons/Recurso 8.png
+    - assets/icons/chica1.png
+    - assets/icons/chica2.png
+    - assets/icons/chica3.png
+    - assets/icons/chica4.png
+    - assets/icons/chica5.png
+    - assets/images/pretty-serious.jpg
+    - assets/images/Mujer2.jpg
+    - assets/images/Mujer fondo morado.jpg
+    - assets/images/home.jpg
+    - assets/images/purple-texture.jpg
+    - assets/images/Background.jpg
+    - assets/images/etapa1.jpg
+    - assets/images/etapa2.jpg
+    - assets/images/etapa3.jpg
+    - assets/images/etapa4.jpg
+    - assets/images/etapa5.jpg
+    - assets/images/formacion.jpeg
+    - assets/icons/formularioimagen.png
+    - assets/icons/acabar-con-la-violencia.ico  # <-- Asegúrate de que esta imagen exista en la ruta indicada
+
+  fonts:
+    - family: AmsiPro
+      fonts:
+        - asset: assets/fonts/AmsiPro-Regular.otf
+        - asset: assets/fonts/AmsiPro-Ultra.otf
+        - asset: assets/fonts/AmsiProNormal-Black.ttf
+    - family: LeagueSpartan
+      fonts:
+        - asset: assets/fonts/LeagueSpartan-Bold.otf
+
+  uses-material-design: true
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/acabar-con-la-violencia.ico"  # <-- Verifica que esta ruta sea correcta y la imagen exista
+

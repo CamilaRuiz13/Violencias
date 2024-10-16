@@ -1,0 +1,48 @@
+# Flutter/Dart/Android/iOS specific
+*.dart_tool/
+*.packages
+*.flutter-plugins
+*.flutter-plugins-dependencies
+.packages
+.pub/
+build/
+# Obsolete, use .dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Android
+local.properties
+**/android/key.properties
+**/android/app/key.properties
+
+# iOS
+**/ios/Flutter/Flutter.framework/
+**/ios/Flutter/Flutter.podspec
+**/ios/.symlinks/
+**/ios/Pods/
+**/ios/Runner.xcworkspace/
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.framework
+**/ios/Flutter/app.dylib
+**/ios/Flutter/engine.dylib
+**/ios/Flutter/flutter_assets/
+**/ios/ServiceDefinitions.json
+*.hmap
+*.ipa
+*.app.dSYM
+project.xcworkspace/
+xcuserdata/
+*.xcuserstate
+
+# Xcode
+.DS_Store
+*.swp
+*.xcuserdatad/
+.idea/
+*.iml
+
+# Miscellaneous
+*.log
+.pumelog
+pubspec.lock
