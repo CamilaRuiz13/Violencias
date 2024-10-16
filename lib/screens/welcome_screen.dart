@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:violencias/screens/home.dart'; 
+import 'package:plvbg/screens/home.dart'; 
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});

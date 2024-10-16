@@ -1,5 +1,5 @@
-name: violencias
-description: "A new Flutter project."
+name: plvbg
+description: "Poli libre de violencias basadas en género."
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -12,13 +12,13 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   url_launcher: ^6.0.20
-  permission_handler: ^10.2.0 
+  permission_handler: ^10.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
-  flutter_launcher_icons: ^0.14.1
+  flutter_launcher_icons: ^0.14.1  # Actualizado a una versión compatible
 
 flutter:
   assets:
@@ -50,7 +50,7 @@ flutter:
     - assets/images/etapa5.jpg
     - assets/images/formacion.jpeg
     - assets/icons/formularioimagen.png
-    - assets/icons/acabar-con-la-violencia.ico  # <-- Asegúrate de que esta imagen exista en la ruta indicada
+    - assets/icons/acabar-con-la-violencia.ico  
 
   fonts:
     - family: AmsiPro
@@ -64,8 +64,28 @@ flutter:
 
   uses-material-design: true
 
+#flutter_launcher_icons:
+ # android: true
+  #ios: true
+  #image_path: "assets/icons/acabar-con-la-violencia.png"
+  #adaptive_icon_background: "#ffffff"  # Opcional: color de fondo para iconos adaptativos
+  #adaptive_icon_foreground: "assets/icons/acabar-con-la-violencia.png"  # Opcional: icono para primer plano en iconos adaptativos
+
+
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/icons/acabar-con-la-violencia.ico"  # <-- Verifica que esta ruta sea correcta y la imagen exista
-
+  image_path: "assets/icons/acabar-con-la-violencia.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/icons/acabar-con-la-violencia.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/icons/acabar-con-la-violencia.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/icons/acabar-con-la-violencia.png"

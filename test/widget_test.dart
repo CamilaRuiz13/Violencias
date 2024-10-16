@@ -1,6 +1,6 @@
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:violencias/main.dart';  // Asegúrate de que este sea el archivo correcto que contiene tu `MyApp`
+import 'package:plvbg/main.dart';  // Asegúrate de que este sea el archivo correcto que contiene tu `MyApp`
 
 void main() {
   testWidgets('Test de navegación con BottomNavigationBar', (WidgetTester tester) async {

@@ -116,7 +116,7 @@ class Home extends StatelessWidget {
 
         const SizedBox(height: 10),
         _buildNavButton(context, 'INICIO', 'assets/icons/Recurso 10.png', '/home'),
-        _buildNavButton(context, 'LÍNEAS DE EMERGENCIA', 'assets/icons/recurso3.png', '/lineas_de_llamada'),
+        _buildNavButton(context, 'LÍNEAS DE EMERGENCIA', 'assets/icons/Recurso 3.png', '/lineas_de_llamada'),
         _buildNavButton(context, 'PROTOCOLO VBG Y VSX.', 'assets/icons/Recurso 4.png', '/protocolo_vbg_y_vsx'),
         _buildNavButton(context, 'ATENCIÓN PSICOJURÍDICA.', 'assets/icons/Recurso 5.png', '/solicitud_de_atencion_psicojuridica'),
         _buildNavButton(context, 'FORMACIÓN VBG.', 'assets/icons/Recurso 6.png', '/formacion_vbg'),

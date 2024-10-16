@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:violencias/screens/Etapa1Page.dart';
-import 'package:violencias/screens/Etapa2Page.dart';
-import 'package:violencias/screens/Etapa3Page.dart';
-import 'package:violencias/screens/Etapa4Page.dart';
-import 'package:violencias/screens/Etapa5Page.dart';
-import 'package:violencias/screens/formacion_vbg.dart';
-import 'package:violencias/screens/home.dart';
-import 'package:violencias/screens/lineas_de_llamada.dart';
-import 'package:violencias/screens/solicitud_de_atencion_psicojuridica.dart';
-
+import 'package:plvbg/screens/Etapa1Page.dart';
+import 'package:plvbg/screens/Etapa2Page.dart';
+import 'package:plvbg/screens/Etapa3Page.dart';
+import 'package:plvbg/screens/Etapa4Page.dart';
+import 'package:plvbg/screens/Etapa5Page.dart';
+import 'package:plvbg/screens/formacion_vbg.dart';
+import 'package:plvbg/screens/home.dart';
+import 'package:plvbg/screens/lineas_de_llamada.dart';
+import 'package:plvbg/screens/solicitud_de_atencion_psicojuridica.dart';
 
 void main() => runApp(MyApp());
 
@@ -118,7 +117,7 @@ class _MainScreenState extends State<MainScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _buildNavButton('INICIO', 0, 'assets/icons/Recurso 10.png'),
-            _buildNavButton('LÍNEAS DE \nEMERGENCIA', 1, 'assets/icons/recurso3.png'),
+            _buildNavButton('LÍNEAS DE \nEMERGENCIA', 1, 'assets/icons/Recurso 3.png'),
             _buildNavButton('PROTOCOLO \nVBG Y VSX', 2, 'assets/icons/Recurso 4.png'),
             _buildNavButton('SOLICITUD DE ATENCIÓN \nPSICOJURÍDICA', 3, 'assets/icons/Recurso 5.png'),
             _buildNavButton('FORMACIÓN \nVBG', 4, 'assets/icons/Recurso 6.png'),

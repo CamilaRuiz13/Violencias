@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:violencias/utils/app_styles.dart';
+import 'package:plvbg/utils/app_styles.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:permission_handler/permission_handler.dart';
 
-class LineasDeLlamadas extends StatefulWidget {
-  const LineasDeLlamadas({super.key});
+class LineasDeLlamadas extends StatelessWidget {
+  const LineasDeLlamadas({Key? key}) : super(key: key);
 
-  @override
-  State<LineasDeLlamadas> createState() => _LineasDeLlamadasState();
-}
-
-class _LineasDeLlamadasState extends State<LineasDeLlamadas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,9 +44,9 @@ class _LineasDeLlamadasState extends State<LineasDeLlamadas> {
                   style: AppStyles.normalTextStyle,
                 ),
                 const SizedBox(height: 8),
-                _buildEmergencyButton('Llamar al 123', 'tel:123', 'assets/icons/Recurso 2.png'),
+                _buildEmergencyButton(context, 'Llamar al 123', '123', 'assets/icons/Recurso 2.png'),
                 const SizedBox(height: 8),
-                _buildEmergencyButton('Llamar al 155', 'tel:155', 'assets/icons/Recurso 2.png'),
+                _buildEmergencyButton(context, 'Llamar al 155', '155', 'assets/icons/Recurso 2.png'),
                 const SizedBox(height: 8),
                 const Text(
                   'Línea amiga saludable',
@@ -65,9 +59,9 @@ class _LineasDeLlamadasState extends State<LineasDeLlamadas> {
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 8),
-                _buildEmergencyButton('Llamar al 444 44 48', 'tel:44444448', 'assets/icons/Recurso 2.png'),
+                _buildEmergencyButton(context, 'Llamar al 444 44 48', '6044444448', 'assets/icons/Recurso 2.png'),
                 const SizedBox(height: 8),
-                _buildWhatsAppButton('+573007231123', 'assets/icons/whatsaap.png'), // Ajusta el número según tu país
+                _buildWhatsAppButton(context, '573007231123', 'assets/icons/whatsaap.png'),
               ],
             ),
           ),
@@ -76,31 +70,18 @@ class _LineasDeLlamadasState extends State<LineasDeLlamadas> {
     );
   }
 
-  Widget _buildEmergencyButton(String text, String uri, String iconPath) {
+  Widget _buildEmergencyButton(BuildContext context, String text, String phoneNumber, String iconPath) {
     return ElevatedButton(
       style: AppStyles.emergencyButtonStyle,
-      onPressed: () async {
-        if (await Permission.phone.request().isGranted) {
-          final Uri url = Uri.parse(uri);
-          if (await canLaunchUrl(url)) {
-            await launchUrl(url);
-          } else {
-            throw 'Could not launch $url';
-          }
-        } else {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('El permiso de llamada no fue concedido.')),
-          );
-        }
-      },
+      onPressed: () => _makePhoneCall(phoneNumber),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
             iconPath,
-            height: 24, // Ajusta el tamaño según sea necesario
+            height: 24,
             width: 24,
-            color: Color.fromARGB(255, 145, 39, 120), // Cambia el color según tu tema
+            color: const Color.fromARGB(255, 145, 39, 120),
           ),
           const SizedBox(width: 8),
           Text(text),
@@ -109,30 +90,40 @@ class _LineasDeLlamadasState extends State<LineasDeLlamadas> {
     );
   }
 
-  Widget _buildWhatsAppButton(String number, String iconPath) {
+  Future<void> _makePhoneCall(String phoneNumber) async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: phoneNumber,
+    );
+    if (!await launchUrl(launchUri)) {
+      throw 'Could not launch $launchUri';
+    }
+  }
+
+  Widget _buildWhatsAppButton(BuildContext context, String number, String iconPath) {
     return ElevatedButton(
       style: AppStyles.emergencyButtonStyle,
-      onPressed: () async {
-        final Uri url = Uri.parse('https://wa.me/$number');
-        if (await canLaunchUrl(url)) {
-          await launchUrl(url);
-        } else {
-          throw 'Could not launch $url';
-        }
-      },
+      onPressed: () => _launchWhatsApp(number),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
             iconPath,
-            height: 24, // Ajusta el tamaño según sea necesario
+            height: 24,
             width: 24,
-            color: Color.fromARGB(255, 145, 39, 120),// Cambia el color según tu tema
+            color: const Color.fromARGB(255, 145, 39, 120),
           ),
           const SizedBox(width: 8),
-          Text('$number'),
+          Text(number),
         ],
       ),
     );
+  }
+
+  Future<void> _launchWhatsApp(String number) async {
+    final Uri url = Uri.parse('https://wa.me/$number');
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+      throw 'Could not launch $url';
+    }
   }
 }
